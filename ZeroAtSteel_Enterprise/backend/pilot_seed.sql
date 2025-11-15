@@ -1,0 +1,14 @@
+insert into plant_metadata (plant_id, name, country, region, timezone, is_active, meta) values ('TKSE_DUISBURG_MAIN','ThyssenKrupp Steel Europe — Duisburg Main','DE','NRW','Europe/Berlin',true,'{"type":"pilot"}') on conflict (plant_id) do update set name=excluded.name,country=excluded.country,region=excluded.region,timezone=excluded.timezone,is_active=excluded.is_active,meta=excluded.meta;
+
+insert into enterprise_settings (key,value,updated_by) values ('ets_price_eur_per_tco2','{"value":80,"currency":"EUR"}','system') on conflict (key) do update set value=excluded.value,updated_at=now(),updated_by=excluded.updated_by;
+insert into enterprise_settings (key,value,updated_by) values ('cbam_price_floor_eur_per_tco2','{"value":75,"currency":"EUR"}','system') on conflict (key) do update set value=excluded.value,updated_at=now(),updated_by=excluded.updated_by;
+insert into enterprise_settings (key,value,updated_by) values ('electricity_price_eur_per_mwh','{"value":120,"currency":"EUR"}','system') on conflict (key) do update set value=excluded.value,updated_at=now(),updated_by=excluded.updated_by;
+insert into enterprise_settings (key,value,updated_by) values ('natural_gas_price_eur_per_mwh','{"value":60,"currency":"EUR"}','system') on conflict (key) do update set value=excluded.value,updated_at=now(),updated_by=excluded.updated_by;
+insert into enterprise_settings (key,value,updated_by) values ('h2_price_eur_per_kg','{"value":5.0,"currency":"EUR","type":"green"}','system') on conflict (key) do update set value=excluded.value,updated_at=now(),updated_by=excluded.updated_by;
+insert into enterprise_settings (key,value,updated_by) values ('h2_blend_max_pct','{"value":0.20,"unit":"fraction"}','system') on conflict (key) do update set value=excluded.value,updated_at=now(),updated_by=excluded.updated_by;
+insert into enterprise_settings (key,value,updated_by) values ('scrap_price_baseline','{"HMS_1":{"price_eur_per_ton":350,"co2_kg_per_ton":25},"SHREDDED":{"price_eur_per_ton":380,"co2_kg_per_ton":22},"DRI_PELLETS":{"price_eur_per_ton":420,"co2_kg_per_ton":150}}','system') on conflict (key) do update set value=excluded.value,updated_at=now(),updated_by=excluded.updated_by;
+insert into enterprise_settings (key,value,updated_by) values ('emission_factors_overrides','{"electricity_kg_per_kwh":0.45,"natural_gas_kg_per_mwh":202,"lime_kg_per_kg":0.44,"dolomite_kg_per_kg":0.48}','system') on conflict (key) do update set value=excluded.value,updated_at=now(),updated_by=excluded.updated_by;
+
+insert into rolling_energy (timestamp,shift,line_id,kwh,tons,co2_kg) values (now(),'A','L1',3000,1000,1800);
+insert into rolling_energy (timestamp,shift,line_id,kwh,tons,co2_kg) values (now()-interval '1 day','B','L1',3200,950,1750);
+insert into rolling_energy (timestamp,shift,line_id,kwh,tons,co2_kg) values (now()-interval '2 day','C','L2',2800,980,1700);

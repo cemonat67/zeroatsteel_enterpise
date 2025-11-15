@@ -1,0 +1,14 @@
+[
+  {
+    "id": "1763228935138-0iyeee",
+    "name": "CO2 high",
+    "rule": {
+      "metric": "co2",
+      "op": ">",
+      "threshold": 420,
+      "scope": "plant",
+      "severity": "high"
+    },
+    "enabled": true
+  }
+]

@@ -1,0 +1,112 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Zero@Steel Enterprise</title>
+    <link rel="stylesheet" href="assets/css/style.css" />
+    <script src="assets/js/config.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+    <script src="assets/js/app.js" defer></script>
+  </head>
+  <body>
+    <header class="topbar">
+      <div class="brand">Zero@Steel Enterprise • Production</div>
+      <div class="env" id="env"></div>
+      <div class="model">
+        <input id="email" type="email" placeholder="email" />
+        <input id="password" type="password" placeholder="password" />
+        <button id="login" class="primary">Login</button>
+        <button id="logout" class="secondary">Logout</button>
+      </div>
+    </header>
+    <main class="container">
+      <section class="panel">
+        <div class="panel-title">Executive KPIs — TKSE_DUISBURG_MAIN</div>
+        <div id="exec-kpi"></div>
+      </section>
+      <section class="panel">
+        <div class="panel-title">Executive Calculators</div>
+        <div>
+          <input id="cbam-ton" type="number" placeholder="tonnage" />
+          <input id="cbam-intensity" type="number" placeholder="tCO₂/ton" step="0.01" />
+          <button id="cbam-calc" class="primary">Calculate CBAM</button>
+          <button id="cbam-report" class="secondary">Generate CBAM Report</button>
+          <button id="cbam-download" class="secondary">Download CBAM PDF</button>
+        </div>
+        <pre id="cbam-result"></pre>
+      </section>
+      <section class="panel">
+        <div class="panel-title">Executive Slides</div>
+        <div id="exec-slides"></div>
+      </section>
+      <section class="panel">
+        <div class="panel-title">Executive Scenarios</div>
+        <div>
+          <input id="sc-ton" type="number" placeholder="tonnage" />
+          <input id="sc-intensity" type="number" placeholder="tCO₂/ton" step="0.01" />
+          <input id="sc-mwh" type="number" placeholder="MWh/ton" step="0.01" />
+          <input id="sc-ets" type="number" placeholder="ETS €/tCO₂" step="0.01" />
+          <input id="sc-elec" type="number" placeholder="Electricity €/MWh" step="0.01" />
+          <input id="sc-h2" type="number" placeholder="H₂ €/kg" step="0.01" />
+          <input id="sc-h2kg" type="number" placeholder="H₂ kg/ton" step="0.01" />
+          <input id="sc-blend" type="number" placeholder="H₂ blend fraction" step="0.01" />
+          <button id="sc-run" class="primary">Run Scenario</button>
+          <button id="sc-export" class="secondary">Export CSV</button>
+          <div style="margin-top:8px">
+            <button id="preset-ets-70" class="secondary">ETS 70</button>
+            <button id="preset-ets-90" class="secondary">ETS 90</button>
+            <button id="preset-elec-100" class="secondary">Elec 100</button>
+            <button id="preset-elec-140" class="secondary">Elec 140</button>
+            <button id="preset-blend-01" class="secondary">H₂ blend 0.10</button>
+            <button id="preset-blend-03" class="secondary">H₂ blend 0.30</button>
+            <button id="preset-mwh-25" class="secondary">MWh/ton 2.5</button>
+            <button id="preset-mwh-35" class="secondary">MWh/ton 3.5</button>
+            <button id="preset-reset" class="secondary">Reset baseline</button>
+          </div>
+        </div>
+        <pre id="sc-result"></pre>
+      </section>
+      <section class="panel">
+        <div class="panel-title">RAG Upload</div>
+        <div>
+          <input id="rag-title" type="text" placeholder="title" />
+          <input id="rag-file" type="file" accept=".pdf,.docx,.txt" multiple />
+          <button id="rag-index" class="primary">Index</button>
+        </div>
+        <pre id="rag-result"></pre>
+      </section>
+      <section class="panel">
+        <div class="panel-title">Plant Metadata</div>
+        <pre id="plant-meta"></pre>
+      </section>
+      <section class="panel">
+        <div class="panel-title">Furnaces</div>
+        <div id="furnaces"></div>
+      </section>
+      <section class="panel">
+        <div class="panel-title">Health</div>
+        <pre id="health"></pre>
+      </section>
+      <section class="panel">
+        <div class="panel-title">Mini Charts</div>
+        <div id="charts-energy"></div>
+        <div id="charts-co2" style="margin-top:8px"></div>
+      </section>
+      <section class="panel">
+        <div class="panel-title">Reports</div>
+        <button id="export-pdf" class="primary">Export Executive PDF</button>
+      </section>
+      <section class="panel">
+        <div class="panel-title">AI Assist</div>
+        <textarea id="prompt" rows="4" placeholder="Enter prompt"></textarea>
+        <button id="ask">Ask</button>
+        <pre id="ai"></pre>
+      </section>
+    </main>
+    <button id="aiCompanionBtn" class="ai-fab">🤖 AI Companion</button>
+    <div id="aiDrawer" class="drawer">
+      <iframe id="aiFrame" src="" class="drawer-frame"></iframe>
+    </div>
+  </body>
+  </html>

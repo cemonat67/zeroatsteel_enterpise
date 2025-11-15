@@ -1,0 +1,35 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Alert Rules Editor</title>
+    <link rel="stylesheet" href="assets/css/style.css" />
+    <script src="assets/js/config.js"></script>
+    <script src="assets/js/alert_rules.js" defer></script>
+  </head>
+  <body>
+    <div class="container">
+      <section class="panel">
+        <div class="panel-title">Alert Rules</div>
+        <div class="model">
+          <input id="api-key" type="password" placeholder="X-API-Key" />
+        </div>
+        <div id="rules-list" class="history-list"></div>
+      </section>
+      <section class="panel">
+        <div class="panel-title">New / Update Rule</div>
+        <div class="model">
+          <input id="rule-id" type="text" placeholder="id (optional)" />
+          <input id="rule-name" type="text" placeholder="name" />
+          <textarea id="rule-json" rows="6" placeholder='{"metric":"co2","op":">","threshold":420,"scope":"plant","severity":"high"}'></textarea>
+          <label><input id="rule-enabled" type="checkbox" checked /> enabled</label>
+        </div>
+        <div class="actions">
+          <button id="save-rule" class="primary">Save</button>
+          <button id="delete-rule" class="secondary">Delete</button>
+        </div>
+      </section>
+    </div>
+  </body>
+  </html>

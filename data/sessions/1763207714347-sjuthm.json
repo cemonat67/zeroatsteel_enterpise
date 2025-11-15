@@ -1,0 +1,67 @@
+{
+  "messages": [
+    {
+      "role": "user",
+      "content": [
+        {
+          "type": "text",
+          "text": "Merhaba Zero@AgentAI!"
+        }
+      ]
+    },
+    {
+      "role": "user",
+      "content": [
+        {
+          "type": "text",
+          "text": "Bu dosyadaki konuşmaları gorebiliyor musun?"
+        }
+      ]
+    },
+    {
+      "role": "assistant",
+      "content": [
+        {
+          "type": "text",
+          "text": "Merhaba! Şu anda herhangi bir dosya veya görüntü göremiyorum. Eğer bir dosya paylaşmak istiyorsanız, lütfen dosyayı yükleyiniz. Dosya içeriğini inceleyebilir ve size yardımcı olabilirim."
+        }
+      ]
+    },
+    {
+      "role": "user",
+      "content": [
+        {
+          "type": "text",
+          "text": "Adjust answer per validator. Feedback: Yanıt, dosya ile ilgili bir eylem veya çözüm önerisi sunmamakta. Dosyaların incelenmesi talep edilmesine rağmen, bir dosya yüklenmesi gerektiğini belirtiyor.\nNeeds: Bir dosya yüklememi veya içeriğini benimle paylaşmanızı istemek., Dosya içeriği ile ilişkili bilgi sağlamak."
+        }
+      ]
+    },
+    {
+      "role": "assistant",
+      "content": [
+        {
+          "type": "text",
+          "text": "Size yardımcı olabilmem için dosyadaki konuşmaların içeriğini paylaşabilirsiniz. Dosyayı metin olarak buraya yapıştırabilir veya detaylarını aktarabilirsiniz. Hangi tür bir dosya olduğunu ve ne tür bilgiler içerdiğini öğrenmek isterim."
+        }
+      ]
+    },
+    {
+      "role": "user",
+      "content": [
+        {
+          "type": "text",
+          "text": "Adjust answer per validator. Feedback: The response does not directly address the task of whether conversations in the file can be seen. Instead, it provides a suggestion to share the content, which does not answer the question posed.\nNeeds: Directly address the ability to see conversations in the file., Avoid asking the user to share the content instead of stating the limitations."
+        }
+      ]
+    },
+    {
+      "role": "assistant",
+      "content": [
+        {
+          "type": "text",
+          "text": "Şu anda bir dosyayı doğrudan görme yeteneğim yok. Dosyadaki konuşmaları görebilmem için dosyanın içeriğinin metin olarak paylaşılması gerekiyor. Henüz hiçbir dosya yüklenmediği için konuşmaları inceleyemiyorum."
+        }
+      ]
+    }
+  ]
+}

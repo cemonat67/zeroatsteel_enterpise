@@ -1,0 +1,107 @@
+<!doctype html>
+<html lang="tr">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Zero@AgentAI</title>
+    <link rel="icon" href="/zaai.png" />
+    <link rel="stylesheet" href="/style.css" />
+  </head>
+  <body>
+    <header class="topbar">
+      <div class="brand">
+        <img src="/zaai.png" alt="Zero@AgentAI" class="logo" />
+        <div class="title">
+          <span class="name">Zero@AgentAI</span>
+          <span class="tagline">Carbon Intelligence, Agent Conversations</span>
+        </div>
+      </div>
+      <div class="model">
+        <label for="api-key">API Key</label>
+        <input id="api-key" type="password" placeholder="Enter X-API-Key" />
+        <span id="role-badge" class="badge"></span>
+      </div>
+    </header>
+
+    <main class="container">
+      <div class="columns">
+        <section class="panel">
+          <div class="panel-head">
+            <div class="panel-title">Zero@AgentAI • Claude</div>
+          </div>
+          <div class="model model-block">
+            <label for="model">Model</label>
+            <select id="model"></select>
+          </div>
+          <section id="chat" class="chat"></section>
+        </section>
+
+        
+      </div>
+
+      <section class="panel" style="margin-top:16px">
+        <div class="panel-head">
+          <div class="panel-title">Input</div>
+        </div>
+        <form id="composer" class="composer">
+          <textarea id="input" rows="6" style="width:100%" placeholder="Type your message…"></textarea>
+          <div class="actions" style="margin-top:8px">
+            <button type="button" id="clear" class="secondary">Clear</button>
+            <button type="button" id="cancel" class="secondary">Cancel</button>
+            <button type="submit" id="send" class="primary">Send</button>
+          </div>
+        </form>
+      </section>
+
+      <section class="panel" style="margin-top:16px">
+        <div class="panel-head">
+          <div class="panel-title">Files</div>
+        </div>
+        <div class="files">
+          <input id="files-input" type="file" multiple accept=".txt,.md,.json,.csv,.pdf,.docx" />
+          <input id="images-input" type="file" multiple accept="image/*" />
+          <input id="folder-input" type="file" webkitdirectory directory />
+          <button id="files-upload" class="primary">Upload</button>
+          <button id="images-upload" class="primary">Upload Images</button>
+          <button id="folder-upload" class="secondary">Upload Folder</button>
+        </div>
+        <div id="files-list" class="files-list"></div>
+      </section>
+
+      <section class="panel" style="margin-top:16px" id="history-panel">
+        <div class="panel-head">
+          <div class="panel-title">History</div>
+          <div class="model">
+            <input id="history-query" type="text" placeholder="Search sessions…" />
+            <button id="history-refresh" class="secondary">Refresh</button>
+          </div>
+        </div>
+        <div id="history-list" class="history-list"></div>
+      </section>
+
+      <section class="panel" style="margin-top:16px">
+        <div class="panel-head">
+          <div class="panel-title">Final Output</div>
+        </div>
+        <textarea id="final-output" rows="6" style="width:100%" readonly></textarea>
+        <div id="actions" class="actions-panel"></div>
+        <div class="copy" style="margin-top:8px"><button id="copy-final" class="copy-btn">Copy</button></div>
+      </section>
+
+      <section class="panel" style="margin-top:16px">
+        <div class="panel-head">
+          <div class="panel-title">Terminal</div>
+        </div>
+        <div class="terminal-input">
+          <input id="terminal-cmd" type="text" placeholder="Type a command…" />
+          <button id="terminal-run" class="primary">Run</button>
+        </div>
+        <pre id="terminal" class="terminal"></pre>
+      </section>
+    </main>
+
+    <footer class="footer">© 2025 Zero@Ecosystem • EU Green Deal, ISO 14064-1, GHG Protocol uyumlu asistan</footer>
+
+    <script src="/app.js"></script>
+  </body>
+  </html>

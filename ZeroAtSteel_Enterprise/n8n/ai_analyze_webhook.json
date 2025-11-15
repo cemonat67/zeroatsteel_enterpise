@@ -1,0 +1,20 @@
+{
+  "name": "zero-steel-ai-analyze",
+  "nodes": [
+    {
+      "parameters": {"path": "zero-steel/ai-analyze", "options": {"response": "json"}},
+      "name": "Webhook",
+      "type": "n8n-nodes-base.webhook",
+      "typeVersion": 1,
+      "position": [200, 200]
+    },
+    {
+      "parameters": {"functionCode": "const prompt = $json.prompt || '';\nreturn [{ json: { mode: 'cbam', analysis: { co2: 487, tonnage: 1000, cbam_cost: 48750, benchmark: 420, difference: 67 }, diagnosis: 'Carbon intensity is above EU benchmark by 67 kg/ton.', recommendation: 'Possible improvement via scrap optimization or flux reduction.' } }];"},
+      "name": "Function",
+      "type": "n8n-nodes-base.function",
+      "typeVersion": 1,
+      "position": [400, 200]
+    }
+  ],
+  "connections": {"Webhook": {"main": [[{"node": "Function","type": "main","index": 0}]]}}
+}
